@@ -6,16 +6,46 @@
     <title>AR model</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        
       body {
-        background-color: rgb(134, 96, 96);
-        color: white;
+        background: linear-gradient(135deg, #b9935b 0%, #6b6b83 100%);
+        color: #222;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
 
+      nav {
+        width: 100%;
+        background: rgba(40, 30, 30, 0.95);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 2rem;
+      }
+      nav ul li {
+        display: inline;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 1rem 0.5rem;
+        transition: color 0.2s;
+      }
+      nav ul li a:hover {
+        color: #ffd700;
       }
 
       model-viewer {
@@ -24,7 +54,7 @@
         min-height: 300px; /* Sets a minimum height of 300px */
         max-width: 800px; /* Sets a maximum width of 800px */
         margin: 20px 0;
-        background-color: rgb(90, 67, 46);
+        background-color: rgba(90, 67, 46, 0.95);
         flex-shrink: 0; /* Prevents shrinking of the model-viewer */
       }
 
@@ -32,32 +62,69 @@
         width: 80%; /* Same width as model-viewer */
         padding: 20px;
         margin: 20px 0;
-        background-color: rgb(90, 67, 46);
+        background-color: rgba(255,255,255,0.92);
         max-width: 800px; /* Sets a maximum width of 800px */
-        color: black;
+        color: #222;
         text-align: left;
         box-sizing: border-box; /* Ensures padding doesn't affect width */
         margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s, transform 0.8s;
       }
 
       h2 {
-        margin: 10;
-        padding: 10px;
-        color: black;
+        margin: 24px 0 10px 0;
+        padding: 16px 32px;
+        color: #fff;
+        background: rgba(40,30,30,0.85);
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        letter-spacing: 1px;
+        font-size: 2.2rem;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.18);
       }
+      .show {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    </style>
+    <script>
+      // Sanfte Scroll-Animation für Textboxen
+      document.addEventListener('DOMContentLoaded', function() {
+        const textBoxes = document.querySelectorAll('.text-box');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+            }
+          });
+        }, { threshold: 0.2 });
+        textBoxes.forEach(box => observer.observe(box));
+      });
+    </script>
     </style>
   </head>
   <body>
-<H2>Justin Projekt</H2>
-  <model-viewer src="Website_3D_Scan.glb"
-                ios-src="Website_3D_Scan.usdz"
-                alt="Justin Projekt"
-                ar
-                auto-rotate
-                camera-controls
-                autoplay
-                animation-loop
-                animation-name="CubeAction"
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#model">3D Modell</a></li>
+        <li><a href="#info">Info</a></li>
+      </ul>
+    </nav>
+    <h2>Justin Projekt</h2>
+  <model-viewer id="model" src="Website_3D_Scan.glb"
+        ios-src="Website_3D_Scan.usdz"
+        alt="Justin Projekt"
+        ar
+        auto-rotate
+        camera-controls
+        autoplay
+        animation-loop
+        animation-name="CubeAction"
                 ar-modes="webxr scene-viewer quick-look" 
                 environment-image="neutral">   
   </model-viewer>
