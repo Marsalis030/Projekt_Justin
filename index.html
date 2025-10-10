@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin AR Model
+    <title>Ein Blick in die Zukunft 
     </title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-      body {
-        background: linear-gradient(135deg, #b9935b 0%, #6b6b83 100%);
+    body {
+  background: url('Hintergrund.jpg') no-repeat center center fixed;
+        background-size: cover;
         color: #222;
         display: flex;
         flex-direction: column;
@@ -60,17 +61,20 @@
       }
 
       .text-box {
-        width: 80%; /* Same width as model-viewer */
-        padding: 20px;
-        margin: 20px 0;
-        background-color: rgba(255,255,255,0.92);
-        max-width: 800px; /* Sets a maximum width of 800px */
-        color: #222;
-        text-align: left;
-        box-sizing: border-box; /* Ensures padding doesn't affect width */
-        margin-bottom: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        width: 80%;
+        padding: 24px 32px;
+        margin: 24px 0;
+        background: rgba(40, 30, 30, 0.65); /* Halbtransparenter dunkler Hintergrund */
+        max-width: 700px;
+        color: #fff;
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+        font-size: 1.2rem;
+        line-height: 1.7;
+        letter-spacing: 0.02em;
         opacity: 0;
         transform: translateY(40px);
         transition: opacity 0.8s, transform 0.8s;
@@ -109,16 +113,9 @@
     </style>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#model">3D Modell</a></li>
-        <li><a href="#info">Info</a></li>
-      </ul>
-    </nav>
-    <h2>Justin Projekt</h2>
-  <model-viewer id="model" src="Website_3D_Scan.glb"
-        ios-src="Website_3D_Scan.usdz"
+    <h2>Blick in die Zukunft</h2>
+  <model-viewer id="model" src="test.glb"
+        ios-src="Monitore 1.2.usdz"
         alt="Justin Projekt"
         ar
         auto-rotate
@@ -130,7 +127,7 @@
                 environment-image="neutral">   
   </model-viewer>
   <div class="text-box">
-Hello :D How are you ?  </div>
+Was könnte hier in Zukunft stehen ?</div>
    <div class="text-box">
  <a href=https://ninalaila.github.io/ProjektNina/>Nina</a>
 &larr; Screenschots &#x1F48E; WEBRING &rarr;
