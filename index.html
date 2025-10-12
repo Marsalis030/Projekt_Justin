@@ -9,32 +9,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-  background: linear-gradient(135deg, #222b22 0%, #265326 60%, #0d690dd5 100%);
-  background-attachment: fixed;
-  background-size: cover;
-  animation: mossfade 2.5s ease;
-@keyframes mossfade {
-  0% {
-    filter: brightness(0.7) blur(8px);
-    opacity: 0;
-  }
-  60% {
-    filter: brightness(1) blur(0.5px);
-    opacity: 1;
-  }
-  100% {
-    filter: brightness(1) blur(0px);
-    opacity: 1;
-  }
-}
-  color: #e9a5c6;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-  font-family: 'Quicksand', Arial, sans-serif;
+      background: radial-gradient(circle at 60% 20%, #ffb6e6 0%, #6ea96e 40%, #222b22 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      animation: mossfade 2.5s ease;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Quicksand', Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    @keyframes mossfade {
+      0% {
+        filter: brightness(0.7) blur(8px);
+        opacity: 0;
       }
+      60% {
+        filter: brightness(1) blur(0.5px);
+        opacity: 1;
+      }
+      100% {
+        filter: brightness(1) blur(0px);
+        opacity: 1;
+      }
+    }
 
       nav {
         width: 100%;
@@ -57,7 +59,7 @@
         display: inline;
       }
       nav ul li a {
-        color: #fff;
+        color: #fff;2
         text-decoration: none;
         font-weight: 500;
         padding: 1rem 0.5rem;
@@ -98,32 +100,53 @@
         width: 80%;
         padding: 24px 32px;
         margin: 24px 0;
-        background: none;
+        background: rgba(255,255,255,0.13);
+        backdrop-filter: blur(8px) brightness(1.1);
         max-width: 700px;
-        color: #222;
+        color: #ffd1ec;
         text-align: center;
         box-sizing: border-box;
         margin-bottom: 24px;
-        border-radius: 18px;
-        box-shadow: none;
-        font-size: 1.2rem;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(255,182,230,0.18);
+        font-size: 1.25rem;
         line-height: 1.7;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.03em;
         opacity: 0;
         transform: translateY(40px);
         transition: opacity 0.8s, transform 0.8s;
       }
+      .text-box a {
+        color: #fff;
+        background: linear-gradient(90deg, #ffb6e6 0%, #6ea96e 100%);
+        padding: 4px 12px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s, color 0.3s;
+      }
+      .text-box a:hover {
+        background: linear-gradient(90deg, #6ea96e 0%, #ffb6e6 100%);
+        color: #222;
+      }
 
       h2 {
-        margin: 24px 0 10px 0;
-        padding: 16px 32px;
-        color: #222;
+        margin: 32px 0 18px 0;
+        padding: 18px 40px;
+        color: #fff;
         background: none;
-        border-radius: 16px;
-        box-shadow: none;
-        letter-spacing: 1px;
-        font-size: 2.2rem;
-        text-shadow: none;
+        border-radius: 32px;
+        box-shadow: 0 0 32px #ffb6e6, 0 2px 12px rgba(0,0,0,0.15);
+        letter-spacing: 2px;
+        font-size: 2.6rem;
+        text-shadow: 0 0 18px #ffb6e6, 0 2px 8px rgba(0,0,0,0.18);
+        font-weight: 600;
+        animation: glowfade 2.2s ease;
+      }
+      @keyframes glowfade {
+        0% { opacity: 0; filter: blur(8px); }
+        60% { opacity: 1; filter: blur(0.5px); }
+        100% { opacity: 1; filter: blur(0px); }
       }
       .show {
         opacity: 1 !important;
@@ -148,6 +171,7 @@
   </head>
   <body>
     <h2>Blick in die Zukunft</h2>
+    
   <model-viewer id="model" src="Abgabe_3D_Blockseminar.glb"
         ios-src="Abgabe_3D_Blockseminar.usdz"
         alt="Justin Projekt"
@@ -161,9 +185,8 @@
                 environment-image="neutral">   
   </model-viewer>
   <div class="text-box">
-Was passiert mit unserem Digitalen Körper wenn es uns nicht mehr gibt?</div>
+Wir schreiben das Jahr 2137. Die Menschheit ist erst vor kurzem ausgestorben. Die Erde ist aufgrund von Nuklearen-Strahlungen nicht mehr bewohnbar. Der Digitale Körper vieler Menschen schwirrt allerdings noch in den weiten der zurückgebliebenen Datenmengen herum.</div>
    <div class="text-box">
-
  <a href=https://ninalaila.github.io/ProjektNina/>Nina</a>
 &larr; Screenschots &#x1F48E; WEBRING &rarr;
 <a href=https://kristinaisla.github.io/projekt-/>Kristina</a>
